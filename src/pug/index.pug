@@ -6,43 +6,56 @@ block vars
 	-var pageClass='homePage'
 	-var pageURL = '';
 block content
-	.formFilters
+	.formFilters.p-3
 		form#filterForm
-			input(type="text", id="searchTitle", data-filter="data-title")
-			div
-				input(type="checkbox",id="News", name="cat", value="News", data-filter="data-cat")
-				label(for="News") News
-			div
-				input(type="checkbox",id="Events", name="cat", value="Events", data-filter="data-cat")
-				label(for="Events") Events
-			div
-				input(type="checkbox",id="Blog", name="cat", value="Blog", data-filter="data-cat")
-				label(for="Blog") Blog
-			div
-				input(type="checkbox",id="pool", name="facility", value="Pool", data-filter="data-facility")
-				label(for="pool") Pool
-			div
-				input(type="checkbox",id="spa", name="facility", value="Spa", data-filter="data-facility")
-				label(for="spa") Spa
-			div
-				input(type="checkbox",id="golf", name="facility", value="Golf", data-filter="data-facility")
-				label(for="golf") Golf
-			div
-				input(type="radio",id="3", name="stars", value="3", data-filter="data-stars")
-				label(for="3") 3 Stars
-			div
-				input(type="radio",id="4", name="stars", value="4", data-filter="data-stars")
-				label(for="4") 4 Stars
-			div
-				input(type="radio",id="5", name="stars", value="5", data-filter="data-stars")
-				label(for="5") 5 Stars
+			.d-flex
+				div.mr-3
+					input(type="text", id="searchTitle", data-filter="data-title")
+				div.mr-3
+					div
+						select(data-filter="data-location",id="location")
+							option(value="") Select
+							option(value="Cairo") Cairo
+							option(value="Alex") Alex
+			.d-flex.mt-3
+				div.mr-3
+					div
+						input(type="checkbox",id="News", name="cat", value="News", data-filter="data-cat")
+						label(for="News") News
+					div
+						input(type="checkbox",id="Events", name="cat", value="Events", data-filter="data-cat")
+						label(for="Events") Events
+					div
+						input(type="checkbox",id="Blog", name="cat", value="Blog", data-filter="data-cat")
+						label(for="Blog") Blog
+				div.mr-3
+					div
+						input(type="checkbox",id="pool", name="facility", value="Pool", data-filter="data-facility")
+						label(for="pool") Pool
+					div
+						input(type="checkbox",id="spa", name="facility", value="Spa", data-filter="data-facility")
+						label(for="spa") Spa
+					div
+						input(type="checkbox",id="golf", name="facility", value="Golf", data-filter="data-facility")
+						label(for="golf") Golf
+				div.mr-3
+					div
+						input(type="radio",id="3", name="stars", value="3", data-filter="data-stars")
+						label(for="3") 3 Stars
+					div
+						input(type="radio",id="4", name="stars", value="4", data-filter="data-stars")
+						label(for="4") 4 Stars
+					div
+						input(type="radio",id="5", name="stars", value="5", data-filter="data-stars")
+						label(for="5") 5 Stars
 			input(type="submit", value="apply")
-	-var items = [{title:"First Article",stars:3,category:"News, Events, Blog",facility:"Pool"},
-	-{title:"Second Article",stars:5,category:"Events, Blog",facility:"Spa, Pool"},
-	-{title:"Third Article",stars:4,category:"Events",facility:"Golf, Pool"}]
+	-var items = [{title:"First Article",stars:3,category:"News, Events, Blog",facility:"Pool",location:"cairo"},
+	-{title:"Second Article",stars:5,category:"Events, Blog",facility:"Spa, Pool",location:"alex"},
+	-{title:"Third Article",stars:4,category:"Events",facility:"Golf, Pool",location:"alex"}]
 	each x in items
-		article.filterItems(data-stars=x.stars,data-facility=x.facility,data-cat=x.category,data-title=x.title)
+		article.filterItems.mt-3.px-3(data-stars=x.stars,data-facility=x.facility,data-location=x.location,data-cat=x.category,data-title=x.title)
 			h2= x.title
 			div= x.category
 			div= x.facility
+			div= x.location
 			b= x.stars

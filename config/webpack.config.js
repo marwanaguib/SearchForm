@@ -104,21 +104,21 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: false,
-        uglifyOptions: {compress: true},
-        uglifyOptions: {
-          output: {
-            comments: false
-          }
-        }
-      }),
-    ]
-  },
+  // optimization: {
+  //   minimizer: [
+  //     new UglifyJsPlugin({
+  //       cache: true,
+  //       parallel: true,
+  //       sourceMap: false,
+  //       uglifyOptions: {compress: true},
+  //       uglifyOptions: {
+  //         output: {
+  //           comments: false
+  //         }
+  //       }
+  //     }),
+  //   ]
+  // },
   plugins: [
     new FriendlyErrorsWebpackPlugin(),
     new ProgressPlugin(),
