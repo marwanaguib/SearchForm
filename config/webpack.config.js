@@ -148,9 +148,9 @@ module.exports = {
       chunksSortMode: 'manual'
     }),
     new ExtractTextPlugin('styles.min.css'),
-    new CopyWebpackPlugin([{
-      from: path.resolve(__dirname, '../assets/images'),
-      to: path.resolve(__dirname, '../dist/assets/images')
-    }])
+    // new CopyWebpackPlugin([{
+    //   from: path.resolve(__dirname, '../assets/images'),
+    //   to: path.resolve(__dirname, '../dist/assets/images')
+    // }])
   ]
 };
