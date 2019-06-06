@@ -1,0 +1,263 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  font-size:font-rem(20);
+  //@include aboveTablet{font-size:1.4vw;}
+    // @include w-1600{font-size:font-rem(16);}
+  line-height: 1.6;
+  background: $lightGrey;
+  font-weight: 300;
+}
+.container-fluid{
+ 
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.container{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+b, strong {
+    font-weight: bold;
+}
+.row{
+  margin-right: -20px;
+margin-left: -20px;
+}
+[class*='col-']{
+  padding-right: 20px;
+padding-left: 20px;
+}
+*:focus{
+  outline: none;
+}
+img{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+video{
+	max-width: 100%;
+}
+input[type="text"],input[type="search"],input[type="email"],input[type="tel"],input[type="number"],input[type="url"],textarea,select{
+  border: 0;
+  border-bottom: 2px $grey3 solid;
+  background: $white;
+  background-color: transparent;
+  color: $grey;
+}
+select{
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	// background-image: url('../../assets/images/arrow-dd.svg');
+  background-size: font-rem(12);
+	background-repeat:no-repeat;
+	background-position: calc(100% - #{font-rem(12)}) center;
+	padding-right:font-rem(32);
+}
+iframe{
+  max-width: 100%;
+}
+a{
+  &:hover{
+    text-decoration: none;
+  }
+}
+body{
+  overflow-x: hidden;
+}
+.flexColumn{
+	display: flex;
+	flex-direction: column;
+}
+.f-d-c{
+	flex-direction: column;
+}
+.light{
+  font-weight: 300;
+}
+.regular{
+  font-weight: 400;
+}
+.mb-200{
+  margin-bottom: font-rem(200);
+}
+.mt-200{
+  margin-top: font-rem(200);
+}
+.my-200{
+  margin-top: font-rem(200);
+  margin-bottom: font-rem(200);
+}
+.mb-300{
+  margin-bottom: font-rem(300);
+}
+.mt-300{
+  margin-top: font-rem(300);
+}
+.my-300{
+  margin-top: font-rem(300);
+  margin-bottom: font-rem(300);
+}
+.mb-100{
+  margin-bottom: font-rem(100);
+}
+.mt-100{
+  margin-top: font-rem(100);
+}
+.my-100{
+  margin-top: font-rem(100);
+  margin-bottom: font-rem(100);
+}
+.mb-80{
+  margin-bottom: font-rem(80);
+}
+.mt-80{
+  margin-top: font-rem(80);
+}
+.my-80{
+  margin-top: font-rem(80);
+  margin-bottom: font-rem(80);
+}
+.mb-45{
+  margin-bottom: font-rem(45);
+}
+.mt-45{
+  margin-top: font-rem(45);
+}
+.pb-0{
+  padding-bottom: 0;
+}
+.pb-80{
+  padding-bottom: font-rem(80);
+}
+.mb-0{
+  margin-bottom: 0;
+}
+.py-100{
+	padding-top: font-rem(100);
+	padding-bottom: font-rem(100);
+}
+.pt-100{
+  padding-top: font-rem(100);
+}
+.rightImg{
+  img{
+    margin-left: auto;
+  }
+}
+.leftImg{
+  img{
+    margin-right: auto;
+  }
+}
+.centerImg{
+  img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.blockImg{
+  img{
+    display: block;
+    width: 100%;
+  }
+}
+
+.pageContent{
+  // border: 0;
+  // transition: all 0.5s ease;
+  background: $white;
+  margin-top: 0px!important;
+  &--top{
+    position: relative;
+    z-index: 8;
+    background: $white;
+    // overflow-x: hidden;
+    &>div{
+      // background: $white;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    &.greenBullet{
+      li{
+        &:before{
+          color: #128484;
+        }
+      }
+    }
+    li{
+      margin-bottom: font-rem(5);
+      &:before{
+        content: "+";
+        color: $primary;
+        margin-right: font-rem(10);
+        font-weight: bold;
+      }
+    }
+  }
+}
+.animated{
+  opacity: 0;
+}
+.overflow{
+  overflow: hidden;
+}
+.isLoading{
+  position: relative;
+  &:before{
+    content: "";
+    border: 1px $black solid;
+    border-right: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - #{font-rem(15)});
+    left: calc(50% - #{font-rem(15)});
+    width: font-rem(30);
+    height: font-rem(30);
+    z-index: 3;
+    animation: loader infinite .5s linear;
+  }
+  &:after{
+    content: "";
+    background: rgba(255,255,255,0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 30px;
+  }
+}
+@keyframes loader{
+  0%{transform:rotate(180deg);}
+  100%{transform:rotate(0deg);}}
+
+  video::-webkit-media-controls-volume-slider {
+  display: none !important;
+  }
+  video::-webkit-media-controls-mute-button {
+    display: none !important;
+  }
+  video::-webkit-media-controls-timeline {
+    display: none !important;
+  }
+  .H1Heading{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+.j-c-sb
+{
+	justify-content:space-between;
+}
+.a-i-c
+{
+	    align-items: center;
+}
+::-ms-clear { display:none; }
